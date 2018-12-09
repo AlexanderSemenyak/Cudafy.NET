@@ -130,7 +130,7 @@ namespace GASS.CUDA.FFT
 #if LINUX
         internal const string CUFFT_DLL_NAME = "libcufft";
 #else
-        internal const string CUFFT_DLL_NAME = "cufft64_70";
+        internal const string CUFFT_DLL_NAME = "cufft64_100";//alexander 2018.12 support CUDA Toolkit 10 - "cufft64_70";
 #endif
 
         [DllImport(CUFFT_DLL_NAME, EntryPoint = "cufftDestroy")]

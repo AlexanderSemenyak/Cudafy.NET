@@ -281,6 +281,22 @@ namespace Cudafy
         /// CUDA sm_52
         /// </summary>
         sm_52 = 308,
+
+        /// <summary>
+        /// CUDA sm_60
+        /// </summary>
+        sm_60 = 316,//256+60
+
+        /// <summary>
+        /// CUDA sm_61
+        /// </summary>
+        sm_61 = 317,//256+61
+
+        /// <summary>
+        /// CUDA sm_62
+        /// </summary>
+        sm_62 = 318,//256+62
+
         /// <summary>
         /// OpenCL 1.0
         /// </summary>

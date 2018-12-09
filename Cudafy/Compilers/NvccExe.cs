@@ -18,10 +18,10 @@ namespace Cudafy
             else
                 localKey = RegistryKey.OpenBaseKey( RegistryHive.LocalMachine, RegistryView.Registry64 );
 
-            RegistryKey registryKey = localKey.OpenSubKey( @"SOFTWARE\NVIDIA Corporation\GPU Computing Toolkit\CUDA\v7.0", false );
+            RegistryKey registryKey = localKey.OpenSubKey( @"SOFTWARE\NVIDIA Corporation\GPU Computing Toolkit\CUDA\v10.0", false );
             if( null == registryKey )
-                throw new CudafyCompileException( "nVidia GPU Toolkit error: version 7.0 is not installed." );
-            string res = registryKey.GetValue( "InstallDir" ) as string;
+                throw new CudafyCompileException( "nVidia GPU Toolkit error: version 10.0 is not installed." );
+            string res = Path.Combine(Utility.ProgramFiles(), "NVIDIA GPU Computing Toolkit","CUDA", "v10.0");// registryKey.GetValue( "InstallDir" ) as string;
             if( null == res )
                 throw new CudafyCompileException( "nVidia GPU Toolkit error: corrupt installation" );
             if( !Directory.Exists( res ) )

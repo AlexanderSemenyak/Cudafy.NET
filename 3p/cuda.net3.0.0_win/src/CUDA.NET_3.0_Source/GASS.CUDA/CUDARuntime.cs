@@ -16,7 +16,8 @@ namespace GASS.CUDA
 #if LINUX
         internal const string DLL_NAME = "libcudart";
 #else
-        internal const string DLL_NAME = "cudart64_70";
+        //internal const string DLL_NAME = "cudart64_70";
+        internal const string DLL_NAME = "cudart64_100";//alexander 2018.12 - add support CUDA Toolkit 10;
         internal const string DLL_NAME_PREV = "cudart64_65";
 #endif
         [DllImport(DLL_NAME)]

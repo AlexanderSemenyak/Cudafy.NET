@@ -149,7 +149,8 @@ namespace Cudafy.Maths.RAND
 #if LINUX
         internal const string DLL_NAME = "libcurand";
 #else
-        internal const string DLL_NAME = "curand64_70";
+        internal const string DLL_NAME = "curand64_10"; //alexander 2018.12 CUDA Toolkit 10 support
+        //internal const string DLL_NAME = "curand64_70";
 #endif
         //curandStatus_t curandCreateGenerator (curandGenerator_t generator, curandRngType_t rng_type)
         [DllImport(DLL_NAME)]

@@ -22,7 +22,10 @@ namespace GASS.CUDA
 #else
         internal const string CUDA_DLL_NAME = "nvcuda";
 #endif
-        
+        internal const string CUDA_OBSOLET_4_0 = "Don't use this CUDA API call with CUDA version >= 4.0.";
+        internal const string CUDA_OBSOLET_5_0 = "Don't use this CUDA API call with CUDA version >= 5.0.";
+        internal const string CUDA_OBSOLET_9_2 = "Don't use this CUDA API call with CUDA version >= 9.2.";
+
 
 
         [DllImport(CUDA_DLL_NAME)]
@@ -64,7 +67,19 @@ namespace GASS.CUDA
         public static extern CUResult cuArrayDestroy(CUarray hArray);
         [DllImport(CUDA_DLL_NAME, EntryPoint="cuArrayGetDescriptor_v2")]
         public static extern CUResult cuArrayGetDescriptor(ref CUDAArrayDescriptor pArrayDescriptor, CUarray hArray);
+
+        /// <summary>
+        /// Increments the usage count of the context and passes back a context handle in <c>pctx</c> that must be passed to <see cref="cuCtxDetach"/>
+        /// when the application is done with the context. <see cref="cuCtxAttach"/> fails if there is no context current to the
+        /// thread. Currently, the <c>flags</c> parameter must be <see cref="CUCtxAttachFlags.None"/>.
+        /// </summary>
+        /// <param name="pctx">Returned context handle of the current context</param>
+        /// <param name="flags">Context attach flags (must be <see cref="CUCtxAttachFlags.None"/>)</param>
+        /// <returns>CUDA Error Codes: <see cref="CUResult.Success"/>, <see cref="CUResult.ErrorDeinitialized"/>, <see cref="CUResult.ErrorNotInitialized"/>, 
+        /// <see cref="CUResult.ErrorInvalidContext"/>, <see cref="CUResult.ErrorInvalidValue"/>.
+        /// <remarks>Note that this function may also return error codes from previous, asynchronous launches.</remarks></returns>
         [DllImport(CUDA_DLL_NAME)]
+        [Obsolete(CUDA_OBSOLET_9_2)]
         public static extern CUResult cuCtxAttach(ref CUcontext pctx, uint flags);
         [DllImport(CUDA_DLL_NAME, EntryPoint="cuCtxCreate_v2")]
         public static extern CUResult cuCtxCreate(ref CUcontext pctx, uint flags, CUdevice dev);
@@ -72,7 +87,17 @@ namespace GASS.CUDA
         public static extern CUResult cuCtxDestroy(CUcontext ctx);
         [DllImport(CUDA_DLL_NAME)]
         public static extern CUResult cuCtxDestroy_v2(CUcontext ctx);
+
+        /// <summary>
+        /// Decrements the usage count of the context <c>ctx</c>, and destroys the context if the usage count goes to 0. The context
+        /// must be a handle that was passed back by <see cref="cuCtxCreate_v2"/> or <see cref="cuCtxAttach"/>, and must be current to the calling thread.
+        /// </summary>
+        /// <param name="ctx">Context to destroy</param>
+        /// <returns>CUDA Error Codes: <see cref="CUResult.Success"/>, <see cref="CUResult.ErrorDeinitialized"/>, <see cref="CUResult.ErrorNotInitialized"/>, 
+        /// <see cref="CUResult.ErrorInvalidContext"/>.
+        /// <remarks>Note that this function may also return error codes from previous, asynchronous launches.</remarks></returns>
         [DllImport(CUDA_DLL_NAME)]
+        [Obsolete(CUDA_OBSOLET_9_2)]
         public static extern CUResult cuCtxDetach(CUcontext ctx);
         [DllImport(CUDA_DLL_NAME)]
         public static extern CUResult cuCtxGetDevice(ref CUdevice device);
@@ -80,12 +105,42 @@ namespace GASS.CUDA
         public static extern CUResult cuCtxGetCurrent(ref CUcontext pctx);
         [DllImport(CUDA_DLL_NAME)]
         public static extern CUResult cuCtxSetCurrent(CUcontext pctx);
+
+        /// <summary>
+        /// Pops the current CUDA context from the CPU thread. The CUDA context must have a usage count of 1. CUDA contexts
+        /// have a usage count of 1 upon creation; the usage count may be incremented with <see cref="cuCtxAttach"/> and decremented
+        /// with <see cref="cuCtxDetach"/>.<para/>
+        /// If successful, <see cref="cuCtxPopCurrent"/> passes back the old context handle in <c>pctx</c>. That context may then be made current
+        /// to a different CPU thread by calling <see cref="cuCtxPushCurrent"/>.<para/>
+        /// Floating contexts may be destroyed by calling <see cref="cuCtxDestroy"/>.<para/>
+        /// If a context was current to the CPU thread before <see cref="cuCtxCreate_v2"/> or <see cref="cuCtxPushCurrent"/> was called, this function makes
+        /// that context current to the CPU thread again.
+        /// </summary>
+        /// <param name="pctx">Returned new context handle</param>
+        /// <returns>CUDA Error Codes: <see cref="CUResult.Success"/>, <see cref="CUResult.ErrorDeinitialized"/>, <see cref="CUResult.ErrorNotInitialized"/>, 
+        /// <see cref="CUResult.ErrorInvalidContext"/>.
+        /// <remarks>Note that this function may also return error codes from previous, asynchronous launches.</remarks></returns>
         [DllImport(CUDA_DLL_NAME)]
+        [Obsolete(CUDA_OBSOLET_4_0)]
         public static extern CUResult cuCtxPopCurrent(ref CUcontext pctx);
+
         [DllImport(CUDA_DLL_NAME)]
         public static extern CUResult cuCtxPopCurrent_v2(ref CUcontext pctx);
+
+        /// <summary>
+        /// Pushes the given context <c>ctx</c> onto the CPU thread’s stack of current contexts. The specified context becomes the
+        /// CPU thread’s current context, so all CUDA functions that operate on the current context are affected.<para/>
+        /// The previous current context may be made current again by calling <see cref="cuCtxDestroy"/> or <see cref="cuCtxPopCurrent"/>.<para/>
+        /// The context must be "floating," i.e. not attached to any thread. Contexts are made to float by calling <see cref="cuCtxPopCurrent"/>.
+        /// </summary>
+        /// <param name="ctx">Floating context to attach</param>
+        /// <returns>CUDA Error Codes: <see cref="CUResult.Success"/>, <see cref="CUResult.ErrorDeinitialized"/>, <see cref="CUResult.ErrorNotInitialized"/>, 
+        /// <see cref="CUResult.ErrorInvalidContext"/>, <see cref="CUResult.ErrorInvalidValue"/>.
+        /// <remarks>Note that this function may also return error codes from previous, asynchronous launches.</remarks></returns>
         [DllImport(CUDA_DLL_NAME)]
+        [Obsolete(CUDA_OBSOLET_4_0)]
         public static extern CUResult cuCtxPushCurrent(CUcontext ctx);
+
         [DllImport(CUDA_DLL_NAME)]
         public static extern CUResult cuCtxPushCurrent_v2(CUcontext ctx);
         [DllImport(CUDA_DLL_NAME)]
