@@ -33,10 +33,599 @@ using ICSharpCode.NRefactory.TypeSystem;
 using ICSharpCode.NRefactory.CSharp;
 using Cudafy;
 using CL = Cudafy.Translator.CUDALanguage;
+using ICSharpCode.NRefactory;
 
 namespace Cudafy.Translator
 {
 #pragma warning disable 1591
+
+    public class test : IAstVisitor<object, object>
+    {
+        public object VisitAccessor(Accessor accessor, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitAnonymousMethodExpression(AnonymousMethodExpression anonymousMethodExpression, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitAnonymousTypeCreateExpression(AnonymousTypeCreateExpression anonymousTypeCreateExpression, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitArrayCreateExpression(ArrayCreateExpression arrayCreateExpression, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitArrayInitializerExpression(ArrayInitializerExpression arrayInitializerExpression, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitArraySpecifier(ArraySpecifier arraySpecifier, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitAsExpression(AsExpression asExpression, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitAssignmentExpression(AssignmentExpression assignmentExpression, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitAttribute(ICSharpCode.NRefactory.CSharp.Attribute attribute, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitAttributeSection(AttributeSection attributeSection, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitBaseReferenceExpression(BaseReferenceExpression baseReferenceExpression, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitBinaryOperatorExpression(BinaryOperatorExpression binaryOperatorExpression, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitBlockStatement(BlockStatement blockStatement, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitBreakStatement(BreakStatement breakStatement, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitCaseLabel(CaseLabel caseLabel, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitCastExpression(CastExpression castExpression, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitCatchClause(CatchClause catchClause, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitCheckedExpression(CheckedExpression checkedExpression, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitCheckedStatement(CheckedStatement checkedStatement, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitComment(Comment comment, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitComposedType(ComposedType composedType, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitConditionalExpression(ConditionalExpression conditionalExpression, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitConstraint(Constraint constraint, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitConstructorDeclaration(ConstructorDeclaration constructorDeclaration, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitConstructorInitializer(ConstructorInitializer constructorInitializer, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitContinueStatement(ContinueStatement continueStatement, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitCSharpTokenNode(CSharpTokenNode cSharpTokenNode, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitCustomEventDeclaration(CustomEventDeclaration customEventDeclaration, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitDefaultValueExpression(DefaultValueExpression defaultValueExpression, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitDelegateDeclaration(DelegateDeclaration delegateDeclaration, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitDestructorDeclaration(DestructorDeclaration destructorDeclaration, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitDirectionExpression(DirectionExpression directionExpression, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitDocumentationReference(DocumentationReference documentationReference, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitDoWhileStatement(DoWhileStatement doWhileStatement, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitEmptyStatement(EmptyStatement emptyStatement, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitEnumMemberDeclaration(EnumMemberDeclaration enumMemberDeclaration, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitErrorNode(AstNode errorNode, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitEventDeclaration(EventDeclaration eventDeclaration, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitExpressionStatement(ExpressionStatement expressionStatement, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitExternAliasDeclaration(ExternAliasDeclaration externAliasDeclaration, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitFieldDeclaration(FieldDeclaration fieldDeclaration, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitFixedFieldDeclaration(FixedFieldDeclaration fixedFieldDeclaration, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitFixedStatement(FixedStatement fixedStatement, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitFixedVariableInitializer(FixedVariableInitializer fixedVariableInitializer, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitForeachStatement(ForeachStatement foreachStatement, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitForStatement(ForStatement forStatement, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitGotoCaseStatement(GotoCaseStatement gotoCaseStatement, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitGotoDefaultStatement(GotoDefaultStatement gotoDefaultStatement, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitGotoStatement(GotoStatement gotoStatement, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitIdentifier(Identifier identifier, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitIdentifierExpression(IdentifierExpression identifierExpression, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitIfElseStatement(IfElseStatement ifElseStatement, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitIndexerDeclaration(IndexerDeclaration indexerDeclaration, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitIndexerExpression(IndexerExpression indexerExpression, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitInvocationExpression(InvocationExpression invocationExpression, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitIsExpression(IsExpression isExpression, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitLabelStatement(LabelStatement labelStatement, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitLambdaExpression(LambdaExpression lambdaExpression, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitLockStatement(LockStatement lockStatement, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitMemberReferenceExpression(MemberReferenceExpression memberReferenceExpression, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitMemberType(MemberType memberType, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitMethodDeclaration(MethodDeclaration methodDeclaration, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitNamedArgumentExpression(NamedArgumentExpression namedArgumentExpression, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitNamedExpression(NamedExpression namedExpression, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitNamespaceDeclaration(NamespaceDeclaration namespaceDeclaration, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitNewLine(NewLineNode newLineNode, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitNullNode(AstNode nullNode, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitNullReferenceExpression(NullReferenceExpression nullReferenceExpression, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitObjectCreateExpression(ObjectCreateExpression objectCreateExpression, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitOperatorDeclaration(OperatorDeclaration operatorDeclaration, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitParameterDeclaration(ParameterDeclaration parameterDeclaration, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitParenthesizedExpression(ParenthesizedExpression parenthesizedExpression, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitPatternPlaceholder(AstNode placeholder, Pattern pattern, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitPointerReferenceExpression(PointerReferenceExpression pointerReferenceExpression, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitPreProcessorDirective(PreProcessorDirective preProcessorDirective, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitPrimitiveExpression(PrimitiveExpression primitiveExpression, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitPrimitiveType(PrimitiveType primitiveType, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitPropertyDeclaration(PropertyDeclaration propertyDeclaration, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitQueryContinuationClause(QueryContinuationClause queryContinuationClause, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitQueryExpression(QueryExpression queryExpression, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitQueryFromClause(QueryFromClause queryFromClause, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitQueryGroupClause(QueryGroupClause queryGroupClause, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitQueryJoinClause(QueryJoinClause queryJoinClause, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitQueryLetClause(QueryLetClause queryLetClause, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitQueryOrderClause(QueryOrderClause queryOrderClause, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitQueryOrdering(QueryOrdering queryOrdering, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitQuerySelectClause(QuerySelectClause querySelectClause, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitQueryWhereClause(QueryWhereClause queryWhereClause, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitReturnStatement(ReturnStatement returnStatement, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitSimpleType(SimpleType simpleType, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitSizeOfExpression(SizeOfExpression sizeOfExpression, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitStackAllocExpression(StackAllocExpression stackAllocExpression, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitSwitchSection(SwitchSection switchSection, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitSwitchStatement(SwitchStatement switchStatement, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitSyntaxTree(SyntaxTree syntaxTree, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitText(TextNode textNode, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitThisReferenceExpression(ThisReferenceExpression thisReferenceExpression, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitThrowStatement(ThrowStatement throwStatement, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitTryCatchStatement(TryCatchStatement tryCatchStatement, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitTypeDeclaration(TypeDeclaration typeDeclaration, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitTypeOfExpression(TypeOfExpression typeOfExpression, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitTypeParameterDeclaration(TypeParameterDeclaration typeParameterDeclaration, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitTypeReferenceExpression(TypeReferenceExpression typeReferenceExpression, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitUnaryOperatorExpression(UnaryOperatorExpression unaryOperatorExpression, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitUncheckedExpression(UncheckedExpression uncheckedExpression, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitUncheckedStatement(UncheckedStatement uncheckedStatement, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitUndocumentedExpression(UndocumentedExpression undocumentedExpression, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitUnsafeStatement(UnsafeStatement unsafeStatement, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitUsingAliasDeclaration(UsingAliasDeclaration usingAliasDeclaration, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitUsingDeclaration(UsingDeclaration usingDeclaration, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitUsingStatement(UsingStatement usingStatement, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitVariableDeclarationStatement(VariableDeclarationStatement variableDeclarationStatement, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitVariableInitializer(VariableInitializer variableInitializer, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitWhileStatement(WhileStatement whileStatement, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitWhitespace(WhitespaceNode whitespaceNode, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitYieldBreakStatement(YieldBreakStatement yieldBreakStatement, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VisitYieldReturnStatement(YieldReturnStatement yieldReturnStatement, object data)
+        {
+            throw new NotImplementedException();
+        }
+    }
 
     /// <summary>
 	/// Outputs the AST.
@@ -122,7 +711,7 @@ namespace Cudafy.Translator
 		void WriteSpecials(AstNode start, AstNode end)
 		{
 			for (AstNode pos = start; pos != end; pos = pos.NextSibling) {
-				if (pos.Role == AstNode.Roles.Comment) {
+				if (pos.Role == Roles.Comment) {
 					pos.AcceptVisitor(this, null);
 				}
 			}
@@ -162,7 +751,7 @@ namespace Cudafy.Translator
 		{
 			// Look for the role between the current position and the nextNode.
 			for (AstNode pos = positionStack.Peek(); pos != null && pos != nextNode; pos = pos.NextSibling) {
-				if (pos.Role == AstNode.Roles.Comma) {
+				if (pos.Role == Roles.Comma) {
 					WriteSpecials(positionStack.Pop(), pos);
 					positionStack.Push(pos);
 					break;
@@ -179,7 +768,7 @@ namespace Cudafy.Translator
 		/// <param name="noSpaceAfterComma">When set prevents printing a space after comma.</param>
 		void Comma(AstNode nextNode, bool noSpaceAfterComma = false)
 		{
-			WriteSpecialsUpToRole(AstNode.Roles.Comma, nextNode);
+			WriteSpecialsUpToRole(Roles.Comma, nextNode);
 			Space(policy.SpaceBeforeBracketComma); // TODO: Comma policy has changed.
 			formatter.WriteToken(",");
 			lastWritten = LastWritten.Other;
@@ -231,7 +820,7 @@ namespace Cudafy.Translator
             {
                 if (ie.Annotations.Count() > 0)
                 {
-                    var typeRef = ((object[])(node.Annotations))[0] as ICSharpCode.Decompiler.ILAst.ILVariable;//as Mono.Cecil.TypeReference;
+                    var typeRef = ((object[])(node.Annotations))[0] as ICSharpCode.Decompiler.IL.ILVariable;//as Mono.Cecil.TypeReference;
                     if (typeRef != null && (typeRef.Type.Name == "GThread"))//+		[0]	{thread}	object {ICSharpCode.Decompiler.ILAst.ILVariable}
                         return true;
 
@@ -345,36 +934,36 @@ namespace Cudafy.Translator
 
 		void WriteCommaSeparatedListInBrackets(IEnumerable<ParameterDeclaration> list, bool spaceWithin)
 		{
-			WriteToken("[", AstNode.Roles.LBracket);
+			WriteToken("[", Roles.LBracket);
 			if (list.Any()) {
 				Space(spaceWithin);
 				WriteCommaSeparatedList(list.SafeCast<ParameterDeclaration, AstNode>());
 				Space(spaceWithin);
 			}
-			WriteToken("]", AstNode.Roles.RBracket);
+			WriteToken("]", Roles.RBracket);
 		}
 
 		void WriteCommaSeparatedListInBrackets(IEnumerable<Expression> list)
 		{
-			WriteToken ("[", AstNode.Roles.LBracket);
+			WriteToken ("[", Roles.LBracket);
 			if (list.Any ()) {
 				Space (policy.SpacesWithinBrackets);
 				WriteCommaSeparatedList (list.SafeCast<Expression, AstNode> ());
 				Space (policy.SpacesWithinBrackets);
 			}
-			WriteToken ("]", AstNode.Roles.RBracket);
+			WriteToken ("]", Roles.RBracket);
 		}
 
         void WriteCommaSeparatedIndexerListInBrackets(IEnumerable<Expression> list)
         {
-            WriteToken("[", AstNode.Roles.LBracket);
+            WriteToken("[", Roles.LBracket);
             if (list.Any())
             {
                 Space(policy.SpacesWithinBrackets);
                 WriteCommaSeparatedIndexerList(list.SafeCast<Expression, AstNode>());
                 Space(policy.SpacesWithinBrackets);
             }
-            WriteToken("]", AstNode.Roles.RBracket);
+            WriteToken("]", Roles.RBracket);
         }
 
         void WriteCommaSeparatedIndexerList(IEnumerable<AstNode> list)
@@ -415,7 +1004,7 @@ namespace Cudafy.Translator
 
         void CommaEx(AstNode nextNode, bool noSpaceAfterComma = false)
         {
-            WriteSpecialsUpToRole(AstNode.Roles.Comma, nextNode);
+            WriteSpecialsUpToRole(Roles.Comma, nextNode);
             Space(policy.SpaceBeforeBracketComma); // TODO: Comma policy has changed.
             formatter.WriteToken("");
             lastWritten = LastWritten.Other;
@@ -429,7 +1018,7 @@ namespace Cudafy.Translator
 		/// </summary>
 		void WriteKeyword(string keyword, Role<CSharpTokenNode> tokenRole = null)
 		{
-			WriteSpecialsUpToRole(tokenRole ?? AstNode.Roles.Keyword);
+            WriteSpecialsUpToRole(tokenRole ?? Roles.ExternKeyword);//alexander warn Keyword);
 			if (lastWritten == LastWritten.KeywordOrIdentifier)
 				formatter.Space();
 			formatter.WriteKeyword(keyword);
@@ -438,7 +1027,7 @@ namespace Cudafy.Translator
 		
 		void WriteIdentifier(string identifier, Role<Identifier> identifierRole = null)
 		{
-			WriteSpecialsUpToRole(identifierRole ?? AstNode.Roles.Identifier);
+			WriteSpecialsUpToRole(identifierRole ?? Roles.Identifier);
 			if (IsKeyword(identifier, containerStack.Peek())) {
 				if (lastWritten == LastWritten.KeywordOrIdentifier)
 					Space(); // this space is not strictly required, so we call Space()
@@ -452,6 +1041,7 @@ namespace Cudafy.Translator
 		
 		void WriteToken(string token, Role<CSharpTokenNode> tokenRole)
 		{
+            
 			WriteSpecialsUpToRole(tokenRole);
 			// Avoid that two +, - or ? tokens are combined into a ++, -- or ?? token.
 			// Note that we don't need to handle tokens like = because there's no valid
@@ -484,12 +1074,12 @@ namespace Cudafy.Translator
 		
 		void LPar()
 		{
-			WriteToken("(", AstNode.Roles.LPar);
+			WriteToken("(", Roles.LPar);
 		}
 		
 		void RPar()
 		{
-			WriteToken(")", AstNode.Roles.LPar);
+			WriteToken(")", Roles.LPar);
 		}
 		
 		/// <summary>
@@ -501,7 +1091,7 @@ namespace Cudafy.Translator
 			if (!(role == ForStatement.InitializerRole || role == ForStatement.IteratorRole || role == UsingStatement.ResourceAcquisitionRole)) 
             {
 				if(!_noSemicolon)
-                    WriteToken(";", AstNode.Roles.Semicolon);
+                    WriteToken(";", Roles.Semicolon);
                 _noSemicolon = false;
 				NewLine();
 			}
@@ -526,14 +1116,14 @@ namespace Cudafy.Translator
 		
 		void OpenBrace(BraceStyle style)
 		{
-			WriteSpecialsUpToRole(AstNode.Roles.LBrace);
+			WriteSpecialsUpToRole(Roles.LBrace);
 			formatter.OpenBrace(style);
 			lastWritten = LastWritten.Other;
 		}
 		
 		void CloseBrace(BraceStyle style)
 		{
-			WriteSpecialsUpToRole(AstNode.Roles.RBrace);
+			WriteSpecialsUpToRole(Roles.RBrace);
 			formatter.CloseBrace(style);
 			lastWritten = LastWritten.Other;
 		}
@@ -577,18 +1167,18 @@ namespace Cudafy.Translator
 		void WriteTypeArguments(IEnumerable<AstType> typeArguments)
 		{
 			if (typeArguments.Any()) {
-				WriteToken("<", AstNode.Roles.LChevron);
+				WriteToken("<", Roles.LChevron);
 				WriteCommaSeparatedList(typeArguments);
-				WriteToken(">", AstNode.Roles.RChevron);
+				WriteToken(">", Roles.RChevron);
 			}
 		}
 		
 		void WriteTypeParameters(IEnumerable<TypeParameterDeclaration> typeParameters)
 		{
 			if (typeParameters.Any()) {
-				WriteToken("<", AstNode.Roles.LChevron);
-				WriteCommaSeparatedList(typeParameters.SafeCast<TypeParameterDeclaration, AstNode>());
-				WriteToken(">", AstNode.Roles.RChevron);
+				WriteToken("<", Roles.LChevron);
+				WriteCommaSeparatedList(typeParameters.Cast<AstNode>());
+				WriteToken(">", Roles.RChevron);
 			}
 		}
 		
@@ -609,7 +1199,7 @@ namespace Cudafy.Translator
 					if (lastWritten == LastWritten.KeywordOrIdentifier)
 						formatter.Space();
 				} else {
-					WriteSpecialsUpToRole(AstNode.Roles.Dot, ident);
+					WriteSpecialsUpToRole(Roles.Dot, ident);
 					formatter.WriteToken(".");
 					lastWritten = LastWritten.Other;
 				}
@@ -649,7 +1239,7 @@ namespace Cudafy.Translator
 		{
 			if (!privateImplementationType.IsNull) {
 				privateImplementationType.AcceptVisitor(this, null);
-				WriteToken(".", AstNode.Roles.Dot);
+				WriteToken(".", Roles.Dot);
 			}
 		}
 		#endregion
@@ -712,7 +1302,7 @@ namespace Cudafy.Translator
 		{
 			StartNode(arrayInitializerExpression);
 			BraceStyle style;
-			if (policy.PlaceArrayInitializersOnNewLine == ArrayInitializerPlacement.AlwaysNewLine)
+			if (policy.ArrayInitializerBraceStyle == BraceStyle.NextLine)// == ArrayInitializerPlacement.AlwaysNewLine)
 				style = BraceStyle.NextLine;
 			else
 				style = BraceStyle.EndOfLine;
@@ -749,7 +1339,9 @@ namespace Cudafy.Translator
 			StartNode(assignmentExpression);
 			assignmentExpression.Left.AcceptVisitor(this, data);
 			Space(policy.SpaceAroundAssignment);
-			WriteToken(AssignmentExpression.GetOperatorSymbol(assignmentExpression.Operator), AssignmentExpression.OperatorRole);
+            var token = AssignmentExpression.GetOperatorRole(assignmentExpression.Operator);
+
+            WriteToken(token.Token, token);
 			Space(policy.SpaceAroundAssignment);
 			assignmentExpression.Right.AcceptVisitor(this, data);
 			return EndNode(assignmentExpression);
@@ -808,7 +1400,9 @@ namespace Cudafy.Translator
 					throw new NotSupportedException("Invalid value for BinaryOperatorType");
 			}
 			Space(spacePolicy);
-			WriteToken(BinaryOperatorExpression.GetOperatorSymbol(binaryOperatorExpression.Operator), BinaryOperatorExpression.OperatorRole);
+
+            var token = BinaryOperatorExpression.GetOperatorRole(binaryOperatorExpression.Operator);
+            WriteToken(token.Token,token);
 			Space(spacePolicy);
 			binaryOperatorExpression.Right.AcceptVisitor(this, data);
 			return EndNode(binaryOperatorExpression);
@@ -912,7 +1506,7 @@ namespace Cudafy.Translator
             if ((((ICSharpCode.NRefactory.CSharp.AstNode)(identifierExpression)).Annotations.Count() > 0))
             {
                 //if(identifierExpression.Annotations.First() is ByReferenceType)
-                var type = ((ICSharpCode.Decompiler.ILAst.ILVariable)(((object[])(identifierExpression.Annotations))[0])).Type;
+                var type = ((ICSharpCode.Decompiler.IL.ILVariable)(((object[])(identifierExpression.Annotations))[0])).Type;
                 if (type.IsByReference)// || (!type.IsValueType && !type.IsArray))
                     dereference = true;
             }
@@ -924,7 +1518,7 @@ namespace Cudafy.Translator
             {
                 foreach (var x in identifierExpression.Annotations)
                 {
-                    var xVar = x as ICSharpCode.Decompiler.ILAst.ILVariable;
+                    var xVar = x as ICSharpCode.Decompiler.IL.ILVariable;
                     if (xVar != null)
                     {
                         var array = xVar.Type as Mono.Cecil.ArrayType;
@@ -1282,7 +1876,7 @@ namespace Cudafy.Translator
                 //    // Strictly speaking, these aren't PrimitiveExpressions;
                 //    // but we still support writing these to make life easier for code generators.
                 //    WriteKeyword("float");
-                //    WriteToken(".", AstNode.Roles.Dot);
+                //    WriteToken(".", Roles.Dot);
                 if (float.IsPositiveInfinity(f))
                     WriteIdentifier(CudafyTranslator.LanguageSpecifics.PositiveInfinitySingle); // INFINITY OpenCL  //"PositiveInfinity");
                 else if (float.IsNegativeInfinity(f))
@@ -1309,7 +1903,7 @@ namespace Cudafy.Translator
                     // Strictly speaking, these aren't PrimitiveExpressions;
                     // but we still support writing these to make life easier for code generators.
                     //WriteKeyword("double");
-                    //WriteToken(".", AstNode.Roles.Dot);
+                    //WriteToken(".", Roles.Dot);
                     if (double.IsPositiveInfinity(f))
                         WriteIdentifier(CudafyTranslator.LanguageSpecifics.PositiveInfinityDouble);//"PositiveInfinity");
                     else if (double.IsNegativeInfinity(f))
@@ -1632,7 +2226,7 @@ namespace Cudafy.Translator
 			StartNode(attribute);
 			attribute.Type.AcceptVisitor(this, data);
 			Space(policy.SpaceBeforeMethodCallParentheses);
-			if (attribute.Arguments.Count != 0 || !attribute.GetChildByRole(AstNode.Roles.LPar).IsNull)
+			if (attribute.Arguments.Count != 0 || !attribute.GetChildByRole(Roles.LPar).IsNull)
                 WriteCommaSeparatedList(attribute.Arguments);//, policy.SpaceWithinMethodCallParentheses);
 				//WriteCommaSeparatedListInParenthesis(attribute.Arguments, policy.SpaceWithinMethodCallParentheses);
 			return EndNode(attribute);
@@ -1641,14 +2235,14 @@ namespace Cudafy.Translator
 		public object VisitAttributeSection(AttributeSection attributeSection, object data)
 		{
 			StartNode(attributeSection);
-			//WriteToken("[", AstNode.Roles.LBracket);
+			//WriteToken("[", Roles.LBracket);
             //if (!string.IsNullOrEmpty (attributeSection.AttributeTarget)) {
             //    WriteToken(attributeSection.AttributeTarget, AttributeSection.TargetRole);
             //    WriteToken(":", AttributeSection.Roles.Colon);
             //    Space();
             //}
 			WriteCommaSeparatedList(attributeSection.Attributes.SafeCast<ICSharpCode.NRefactory.CSharp.Attribute, AstNode>());
-			//WriteToken("]", AstNode.Roles.RBracket);
+			//WriteToken("]", Roles.RBracket);
 			if (attributeSection.Parent is ParameterDeclaration || attributeSection.Parent is TypeParameterDeclaration)
 				Space();
 			else
@@ -1892,7 +2486,7 @@ namespace Cudafy.Translator
             //WriteKeyword("using");
             //WriteIdentifier(usingAliasDeclaration.Alias, UsingAliasDeclaration.AliasRole);
             //Space(policy.SpaceAroundEqualityOperator);
-            //WriteToken("=", AstNode.Roles.Assign);
+            //WriteToken("=", Roles.Assign);
             //Space(policy.SpaceAroundEqualityOperator);
             //usingAliasDeclaration.Import.AcceptVisitor(this, data);
             //Semicolon();
@@ -2099,12 +2693,12 @@ namespace Cudafy.Translator
 			
 			WriteCommaSeparatedList(forStatement.Initializers.SafeCast<Statement, AstNode>());
 			Space (policy.SpaceBeforeForSemicolon);
-			WriteToken(";", AstNode.Roles.Semicolon);
+			WriteToken(";", Roles.Semicolon);
 			Space (policy.SpaceAfterForSemicolon);
 			
 			forStatement.Condition.AcceptVisitor(this, data);
 			Space (policy.SpaceBeforeForSemicolon);
-			WriteToken(";", AstNode.Roles.Semicolon);
+			WriteToken(";", Roles.Semicolon);
 			Space(policy.SpaceAfterForSemicolon);
 			
 			WriteCommaSeparatedList(forStatement.Iterators.SafeCast<Statement, AstNode>());
@@ -2520,7 +3114,7 @@ namespace Cudafy.Translator
             //return EndNode(yieldBreakStatement);
 		}
 		
-		public object VisitYieldStatement(YieldStatement yieldStatement, object data)
+		public object VisitYieldReturnStatement(YieldReturnStatement yieldStatement, object data)
 		{
             throw new CudafyLanguageException(CudafyLanguageException.csX_ARE_NOT_SUPPORTED, "Yield statements");
             //StartNode(yieldStatement);
@@ -2835,11 +3429,11 @@ namespace Cudafy.Translator
 			StartNode(fixedVariableInitializer);
 			WriteIdentifier(fixedVariableInitializer.Name);
 			if (!fixedVariableInitializer.CountExpression.IsNull) {
-				WriteToken("[", AstNode.Roles.LBracket);
+				WriteToken("[", Roles.LBracket);
 				Space(policy.SpacesWithinBrackets);
 				fixedVariableInitializer.CountExpression.AcceptVisitor(this, data);
 				Space(policy.SpacesWithinBrackets);
-				WriteToken("]", AstNode.Roles.RBracket);
+				WriteToken("]", Roles.RBracket);
 			}
 			return EndNode(fixedVariableInitializer);
 		}
@@ -3295,7 +3889,7 @@ namespace Cudafy.Translator
 		{
 			if (!string.IsNullOrEmpty(anyNode.GroupName)) {
 				WriteIdentifier(anyNode.GroupName);
-				WriteToken(":", AstNode.Roles.Colon);
+				WriteToken(":", Roles.Colon);
 			}
 			WriteKeyword("anyNode");
 			return null;
@@ -3329,7 +3923,7 @@ namespace Cudafy.Translator
 			foreach (INode alternative in choice) {
 				VisitNodeInPattern(alternative, data);
 				if (alternative != choice.Last())
-					WriteToken(",", AstNode.Roles.Comma);
+					WriteToken(",", Roles.Comma);
 				NewLine();
 			}
 			formatter.Unindent();
@@ -3341,7 +3935,7 @@ namespace Cudafy.Translator
 		{
 			if (!string.IsNullOrEmpty(namedNode.GroupName)) {
 				WriteIdentifier(namedNode.GroupName);
-				WriteToken(":", AstNode.Roles.Colon);
+				WriteToken(":", Roles.Colon);
 			}
 			VisitNodeInPattern(namedNode.ChildNode, data);
 			return null;
@@ -3353,9 +3947,9 @@ namespace Cudafy.Translator
 			LPar();
 			if (repeat.MinCount != 0 || repeat.MaxCount != int.MaxValue) {
 				WriteIdentifier(repeat.MinCount.ToString());
-				WriteToken(",", AstNode.Roles.Comma);
+				WriteToken(",", Roles.Comma);
 				WriteIdentifier(repeat.MaxCount.ToString());
-				WriteToken(",", AstNode.Roles.Comma);
+				WriteToken(",", Roles.Comma);
 			}
 			VisitNodeInPattern(repeat.ChildNode, data);
 			RPar();

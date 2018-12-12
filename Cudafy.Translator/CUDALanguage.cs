@@ -33,7 +33,8 @@ using ICSharpCode.ILSpy;
 using Mono.Cecil;
 using ICSharpCode.NRefactory.CSharp;
 using ICSharpCode.Decompiler;
-using ICSharpCode.Decompiler.Ast.Transforms;
+using ICSharpCode.Decompiler.CSharp.Transforms;
+
 namespace Cudafy.Translator
 {
 #pragma warning disable 1591

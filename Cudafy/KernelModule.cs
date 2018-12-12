@@ -1363,8 +1363,8 @@ namespace Cudafy
                         standardError.Clear();
                         standardOutput.Clear();
                         process.Start();
-                        process.BeginOutputReadLine();
-                        process.BeginErrorReadLine();
+                        //process.BeginOutputReadLine();
+                        //process.BeginErrorReadLine();
 
                         int waitCounter = 0;
                         bool procTimedOut = false;

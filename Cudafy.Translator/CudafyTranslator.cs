@@ -328,7 +328,7 @@ namespace Cudafy.Translator
         /// <returns>A CudafyModule.</returns>
         public static CudafyModule Cudafy(ePlatform platform, eArchitecture arch, Version cudaVersion, bool compile, params Type[] types)
         {
-            var cp = CompilerHelper.Create(ePlatform.Auto, arch, eCudafyCompileMode.Default, WorkingDirectory, GenerateDebug);
+            var cp = CompilerHelper.Create(platform, arch, eCudafyCompileMode.Default, WorkingDirectory, GenerateDebug);
             if (!compile)
                 cp.CompileMode = eCudafyCompileMode.TranslateOnly;
             return Cudafy(cp, types);
@@ -401,6 +401,12 @@ namespace Cudafy.Translator
                 return new Version(5, 0);
             else if (arch == eArchitecture.sm_52)
                 return new Version(5, 2);
+            else if (arch == eArchitecture.sm_60)
+                return new Version(6, 0);
+            else if (arch == eArchitecture.sm_61)
+                return new Version(6, 1);
+            else if (arch == eArchitecture.sm_62)
+                return new Version(6, 2);
             else if (arch == eArchitecture.OpenCL)
                 return new Version(1, 0);
             else if (arch == eArchitecture.OpenCL11)

@@ -48,6 +48,14 @@ namespace Cudafy
         /// <summary>Path to the Microsoft's visual studio folder where cl.exe is localed.</summary>
         public static string getClExeDirectory()
         {
+            string clDir = @"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\bin\Hostx64\x64";
+            string clPath = Path.Combine(clDir, "cl.exe");
+            if (!File.Exists(clPath))
+            {
+                throw new CudafyCompileException("nVidia GPU Toolkit error: cl.exe was not found");
+            }
+
+            return clDir;
             // C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin
 
             string[] versionsToTry = new string[] { "12.0", "11.0" };
@@ -73,7 +81,7 @@ namespace Cudafy
                 // C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\
 
                 InstallDir.TrimEnd( '\\', '/' );
-                string clDir = Path.GetFullPath( Path.Combine( InstallDir, @"..\..\VC\bin" ) );
+                clDir = Path.GetFullPath( Path.Combine( InstallDir, @"..\..\VC\bin" ) );
 
                 if( Environment.Is64BitProcess )
                 {
@@ -85,7 +93,7 @@ namespace Cudafy
                 if( !Directory.Exists( clDir ) )
                     continue;
 
-                string clPath = Path.Combine( clDir, "cl.exe" );
+                clPath = Path.Combine( clDir, "cl.exe" );
                 if( File.Exists( clPath ) )
                     return clDir;
             }
