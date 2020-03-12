@@ -55,6 +55,7 @@ namespace Mono.Cecil {
 			if (cache.TryGetValue (name.FullName, out assembly))
 				return assembly;
 
+			//(@)alexander - this code break parsing propertyes fand transform his to get_Property methods and this code not compiled to GPU (return invalid assembly)
 			//if (name.Name.Contains("Cudafy"))
 			//{
 			//	assembly = ModuleDefinition.ReadModule(this.GetType().Assembly.Location).Assembly;
