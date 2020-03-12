@@ -157,7 +157,7 @@ namespace CudafyModuleViewer
         {
             yield return ("Attempting to cudafy a kernel function.");
             //CudafyTranslator.Language = eLanguage.OpenCL;
-            var mod = CudafyTranslator.Cudafy(ePlatform.Auto, eArchitecture.OpenCL, null, false, typeof(CUDACheck));
+            var mod = CudafyTranslator.Cudafy(ePlatform.x64, eArchitecture.OpenCL, null, false, typeof(CUDACheck));
             yield return ("Successfully translated to OpenCL C.");
 
             for (int id = 0; id < CudafyHost.GetDeviceCount(eGPUType.OpenCL); id++)

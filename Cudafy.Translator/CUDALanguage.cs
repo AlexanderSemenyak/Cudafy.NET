@@ -141,20 +141,58 @@ namespace Cudafy.Translator
             // TO-DO: skip system assemblies
             foreach (System.Reflection.Assembly assembly in AppDomain.CurrentDomain.GetAssemblies())
             {
-                foreach (System.Type type in assembly.GetTypes())
+                try
                 {
-                    foreach (System.Reflection.MethodInfo method in type.GetMethods(System.Reflection.BindingFlags.Static | System.Reflection.BindingFlags.NonPublic).Where(u => u.Name.EndsWith(FormatterSuffix)))
+                    foreach (Type type in assembly.GetTypes())
                     {
-                        System.Reflection.ParameterInfo[] parameter = method.GetParameters();
-                        if (parameter.Length == 2 && parameter[0].ParameterType.Equals(typeof(Cudafy.eLanguage)) && parameter[1].ParameterType.Equals(typeof(System.String[])) && method.ReturnType.Equals(typeof(System.String)))
+                        try
                         {
-                            SpecialMemberFormatter sm = new SpecialMemberFormatter(type.Name, method.Name, new Func<MemberReferenceExpression, object, string>(TranslateFormatterCode), false, false, method);
-                            string key = string.Format("{0}.{1}", type.Name, method.Name.Substring(0, method.Name.Length - FormatterSuffix.Length));
-                            if (CachedFormatters.ContainsKey(key))
-                                throw new CudafyLanguageException(CudafyLanguageException.csMETHOD_X_ALREADY_ADDED_TO_THIS_MODULE, key);
-                            CachedFormatters.Add(key, sm);
+                            foreach (MethodInfo method in type.GetMethods(BindingFlags.Static | BindingFlags.NonPublic)
+                                .Where(u => u.Name.EndsWith(FormatterSuffix)))
+                            {
+                                try
+                                {
+                                    ParameterInfo[] parameter = method.GetParameters();
+                                    if (parameter.Length == 2 && parameter[0].ParameterType == typeof(eLanguage) &&
+                                        parameter[1].ParameterType == typeof(String[]) &&
+                                        method.ReturnType == typeof(String))
+                                    {
+                                        SpecialMemberFormatter sm = new SpecialMemberFormatter(type.Name, method.Name,
+                                            new Func<MemberReferenceExpression, object, string>(TranslateFormatterCode),
+                                            false, false, method);
+                                        string key = string.Format("{0}.{1}", type.Name,
+                                            method.Name.Substring(0, method.Name.Length - FormatterSuffix.Length));
+                                        if (CachedFormatters.ContainsKey(key))
+                                            throw new CudafyLanguageException(
+                                                CudafyLanguageException.csMETHOD_X_ALREADY_ADDED_TO_THIS_MODULE, key);
+                                        CachedFormatters.Add(key, sm);
+                                    }
+                                }
+                                catch (Exception e)
+                                {
+                                    Console.WriteLine(e);
+#if DEBUG
+                        throw;
+#endif
+                                }
+                            }
+                        }
+                        catch (Exception e)
+                        {
+                            Console.WriteLine(e);
+#if DEBUG
+                        throw;
+#endif
                         }
                     }
+                }
+                catch (Exception EX_NAME)
+                {
+                    Console.WriteLine(EX_NAME);
+#if DEBUG
+                        throw;
+#endif
+
                 }
             }
         }
@@ -206,6 +244,11 @@ namespace Cudafy.Translator
             CUDAAstBuilder codeDomBuilder = CreateCUDAAstBuilder(options, currentType: field.DeclaringType, isSingleMember: true);
             codeDomBuilder.AddField(field);
             RunTransformsAndGenerateCode(codeDomBuilder, output, options, dims);
+        }
+
+        public override void DecompileProperty(PropertyDefinition property, ITextOutput output, DecompilationOptions options)
+        {
+            base.DecompileProperty(property, output, options);
         }
 
         public override void DecompileMethod(MethodDefinition method, ICSharpCode.Decompiler.ITextOutput output, DecompilationOptions options)

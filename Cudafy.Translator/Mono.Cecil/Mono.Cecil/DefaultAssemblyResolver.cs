@@ -55,12 +55,12 @@ namespace Mono.Cecil {
 			if (cache.TryGetValue (name.FullName, out assembly))
 				return assembly;
 
-            if (name.Name.Contains("Cudafy"))
-            {
-                assembly = ModuleDefinition.ReadModule(this.GetType().Assembly.Location).Assembly ;
-            }
-            else
-            {
+			//if (name.Name.Contains("Cudafy"))
+			//{
+			//	assembly = ModuleDefinition.ReadModule(this.GetType().Assembly.Location).Assembly;
+			//}
+			//else
+			{
                 assembly = base.Resolve(name);
             }
 

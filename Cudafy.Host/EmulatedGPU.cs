@@ -37,6 +37,7 @@ namespace Cudafy.Host
     /// </summary>
     public sealed class EmulatedGPU : GPGPU
     {
+   
         /// <summary>
         /// Initializes a new instance of the <see cref="EmulatedGPU"/> class.
         /// </summary>
@@ -54,7 +55,7 @@ namespace Cudafy.Host
                 _availableBytesPerfctr = null;
                 Debug.WriteLine(ex.Message);
 #if DEBUG
-                throw;
+              //  throw;
 #endif 
             }
         }
